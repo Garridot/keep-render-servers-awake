@@ -1,0 +1,21 @@
+# YAML file for a GitHub Actions workflow to Keep The Server Running
+
+name: Keep Render Servers Awake
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # Run every 25 minutes for the first server
+    - cron: '*/25 * * * *'  # Run every 15 minutes for the second server
+
+jobs:
+  keep-awake-server1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Request to Keep Awake
+        run: curl -s -I https://football-player-charts-stats-api.onrender.com/
+
+  keep-awake-server2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Request to Keep Awake
+        run: curl -s -I https://football-players-charts.onrender.com/
