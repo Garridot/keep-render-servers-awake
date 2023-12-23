@@ -6,6 +6,8 @@ on:
   schedule:
     - cron: '*/25 * * * *'  # Run every 25 minutes for the first server
     - cron: '*/30 * * * *'  # Run every 30 minutes for the second server
+    - cron: '*/30 * * * *'  # Run every 30 minutes for the third server
+    - cron: '*/30 * * * *'  # Run every 30 minutes for the quarter server
 
 jobs:
   keep-awake-server1:
@@ -19,3 +21,15 @@ jobs:
     steps:
       - name: Send Request to Keep Awake
         run: curl -s -I https://football-players-charts.onrender.com/
+
+  keep-awake-server3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Request to Keep Awake
+        run: curl -s -I https://tomasgarrido.onrender.com/
+
+  keep-awake-server4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Request to Keep Awake
+        run: curl -s -I https://ruins-of-versailles-7rbc.onrender.com/            
