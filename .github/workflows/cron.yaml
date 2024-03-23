@@ -4,10 +4,10 @@ name: Keep Render Servers Awake
 
 on:
   schedule:
-    - cron: '25 */1 * * *'  # Runs the server at 25 minutes past the hour 
-    - cron: '30 */1 * * *'  # Runs the server at 30 minutes past the hour 
-    - cron: '30 */1 * * *'  # Runs the server at 30 minutes past the hour 
-    - cron: '30 */1 * * *'  # Runs the server at 30 minutes past the hour 
+    - cron: '25 8-23 * * *'  # Runs the server at 25 minutes past the hour between 8 am and 11 pm
+    - cron: '30 8-23 * * *'  # Runs the server at 30 minutes past the hour between 8 am and 11 pm
+    - cron: '30 8-23 * * *'  # Runs the server at 30 minutes past the hour between 8 am and 11 pm 
+    - cron: '30 8-23 * * *'  # Runs the server at 30 minutes past the hour between 8 am and 11 pm 
 
 jobs:
   keep-awake-server1:
